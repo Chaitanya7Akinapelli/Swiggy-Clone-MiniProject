@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="controls">
+    <h3>What's on your mind?</h3>
+    <div class="buttons-class">
+      <button (click)="onclickPrev()" [disabled]="!canGoPrev()"><i class="	fa fa-caret-left"></i></button>
+      <button (click)="onclickNext()" [disabled]="!canGoNext()"><i class="	fa fa-caret-right"></i></button>
+    </div>
+  </div>
+  <div class="container-items">
+    <div *ngFor = "let food of foods.slice(currentIndex, currentIndex + itemsToShow)" class="category-item" (click)="goToFoodItems(food.name)">
+      <img [src] = "food.img" alt="Category image">
+    </div>
+  </div>
+</div>
+<hr class="break">
